@@ -16,9 +16,8 @@ for test_case in range(1, T + 1):
         heapq.heappush(temp, p)
         
         while temp and temp[0] < p:
-            print(temp[0], p)
             answer += p - temp[0]
             heapq.heappop(temp)
-            heapq.heappush(p)
+            heapq.heappush(temp, p)
         
     print(f"#{test_case} {answer}")
