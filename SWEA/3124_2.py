@@ -19,7 +19,7 @@ for test_case in range(1, T + 1):
     for i in graph[1]:
         heapq.heappush(queue, i)
         
-    while not all(visited):
+    while queue:
         temp = heapq.heappop(queue)
         
         if visited[temp[1]] == True:
@@ -29,6 +29,7 @@ for test_case in range(1, T + 1):
         visited[temp[1]] = True
         
         for i in graph[temp[1]]:
-            heapq.heappush(queue, i)
+            if visited[i[1]] == False:
+                heapq.heappush(queue, i)
     
     print(f"#{test_case} {answer}")
