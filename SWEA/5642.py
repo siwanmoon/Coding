@@ -7,6 +7,6 @@ for test_case in range(1, T + 1):
     dp.append(arr[0])
     
     for i in range(1, n):
-        dp.append(max(dp[i - 1], dp[i - 1] + arr[i]))
+        dp.append(max(arr[i], dp[i - 1] + arr[i]))
         
     print(f"#{test_case} {max(dp)}")
